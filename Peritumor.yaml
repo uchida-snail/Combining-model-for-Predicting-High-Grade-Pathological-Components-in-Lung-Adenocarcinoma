@@ -1,0 +1,34 @@
+# Example YAML configuration file
+
+
+
+# Settings to use, possible settings are listed in the documentation (section "Customizing the extraction").
+setting:
+  binWidth: 8
+  label: 1
+  interpolator: 'sitkBSpline'  # This is an enumerated value, here None is not allowed
+  resampledPixelSpacing: [1, 1, 1]  # Enable resampling with a spacing of 1x1x1
+  geometryTolerance: 0.1
+  normalize: True
+  normalizeScale: 32               
+
+
+
+
+imageType:
+  Original: {}
+  Wavelet:
+    wavelet: 'db2'
+    binWidth: 32
+  
+  
+  
+              # Featureclasses, from which features must be calculated. If a featureclass is not mentioned, no features are calculated
+              # for that class. Otherwise, the specified features are calculated, or, if none are specified, all are calculated.
+featureClass:
+  firstorder:
+  glcm: 
+  glrlm:         # for lists none values are allowed, in this case, all features are enabled
+  glszm:
+  ngtdm:
+  gldm:
